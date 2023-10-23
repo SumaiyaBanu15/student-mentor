@@ -159,32 +159,23 @@ const assignStudentsToMentor = async(req,res)=>{
   
 const assignMentorToStudent = async (req, res) => {
     try {
-        const { studentName, newMentorName } = req.body;
+        const { studName, newMentorName } = req.body;
 
         // Find the student by name
-        const student = await studentModel.findOne({ studName: studentName });
+        const student = await studentModel.findOne({ studName });
 
         if (!student) {
             return res.status(400).send({
-                message: `Student '${studentName}' not found`,
-            });
-        }
-
-        // Find the mentor by name
-        const mentor = await mentorModel.findOne({ mentorName: newMentorName });
-
-        if (!mentor) {
-            return res.status(400).send({
-                message: `Mentor '${newMentorName}' not found`,
+                message: `Student '${studName}' not found`,
             });
         }
 
         // Update the student's mentorName
-        student.mentorName = newMentorName;
+        student.newMentorName = newMentorName;
         await student.save();
 
         res.status(200).send({
-            message: `Assigned '${studentName}' to mentor '${newMentorName}' successfully`,
+            message: `Assigned New Mentor to '${studName}' successfully`,
         });
     } catch (error) {
         res.status(500).send({
