@@ -141,10 +141,11 @@ const assignStudentsToMentor = async(req,res)=>{
                 message: `Mentor ${mentorName} not found`,
               });
         }
-        else{
-            mentor.mentorStudents.push(...studentNames);
-            await mentor.save();
-        }
+        
+        // Update the Mentor's mentorStudents
+        mentor.mentorStudents.push(...studentNames);
+        await mentor.save();
+
 
         res.status(200).send({
             message: "Students assigned to mentor successfully",
@@ -157,6 +158,7 @@ const assignStudentsToMentor = async(req,res)=>{
     }
 }
   
+// Change Or Update newMentor to the particular Student 
 const assignMentorToStudent = async (req, res) => {
     try {
         const { studName, newMentorName } = req.body;

@@ -13,7 +13,7 @@ const mentorSchema = new mongoose.Schema({
     email : { type:String,
         required:[true, "Email is required"],
         validate:validateEmail},
-    mentorStudents : { type:String },
+    mentorStudents : { type: [String] },
     createdAt : { type:Date,
         default:Date.now()}        
 },

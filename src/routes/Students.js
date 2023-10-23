@@ -7,7 +7,7 @@ router.get('/',StudentController.getStudents)
 router.post('/',StudentController.createStud)
 router.get('/allmentors',StudentController.getMentors)
 router.post('/mentor',StudentController.createMentor)
-router.post('/assignStudent',StudentController.assignStudentsToMentor),
+router.put('/assignStudent',StudentController.assignStudentsToMentor),
 router.put('/assignMentor',StudentController.assignMentorToStudent)
 router.get('/assignedMentor/:studentName', StudentController.getAssignedMentor)
 router.get('/assingedStudents/:mentorName',StudentController.getAssignedStudents)
