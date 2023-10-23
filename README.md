@@ -23,3 +23,6 @@ Select One Mentor add many Students : https://student-mentor-b7rk.onrender.com/s
 Delete Student : https://student-mentor-b7rk.onrender.com/students/:studName
 
 Delete Mentor : https://student-mentor-b7rk.onrender.com/students/deleteMentor/:mentorId
+
+
+postman : https://dark-flare-329680.postman.co/workspace/Stud-Ment~27bfc693-cca0-4978-8107-550b9ebf3545/collection/27772271-019d444d-be26-4f80-8ace-d8560218c653?action=share&creator=27772271
